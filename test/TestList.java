@@ -14,10 +14,7 @@ public class TestList {
         mylist.append(5);
         mylist.append(6);
 
-        for(Integer i : mylist) {
-            System.out.print(String.format("%d ", i));
-        }
-        System.out.println();
+        System.out.println(mylist.describe());
 
         SimpleList<String> mylist2 = new SimpleList<String>();
 
@@ -28,18 +25,19 @@ public class TestList {
         mylist2.append("Hell");
         mylist2.append("Gatito");
 
-        for(String s : mylist2) {
-            System.out.print(String.format("%s ", s));
-        }
-        System.out.println();
+        System.out.println(mylist2.describe());
 
         mylist2.delete("Gatito");
         mylist2.delete("Foo");
         mylist2.delete("Jam");
 
-        for(String s : mylist2) {
-            System.out.print(String.format("%s ", s));
-        }
-        System.out.println();
+        System.out.println(mylist2.describe());
+
+        mylist2.insert(0, "Gatito");
+        mylist2.insert(0, "Bichito");
+        mylist2.insert(5, "Baboom");
+        mylist2.insert(3, "Bonejo");
+
+        System.out.println(mylist2.describe());
     }
 }

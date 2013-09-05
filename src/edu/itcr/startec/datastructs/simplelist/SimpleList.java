@@ -89,18 +89,15 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
 
     @Override
     public boolean append(K pk) {
-        
-        SimpleListNode<K> n = new SimpleListNode<K>(pk);
-        
+
+        SimpleListNode<K> node = new SimpleListNode<K>(pk);
+
         if(isEmpty()) {
-            this.head = n;
-            this.tail = n;
-            this.length += 1;
-            return true;
+            this.head = node;
+        } else {
+            this.tail.setNext(node);
         }
-        
-        this.tail.setNext(n);
-        this.tail = n;
+        this.tail = node;
         this.length += 1;
         return true;
     }
@@ -164,8 +161,39 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
 
     @Override
     public boolean insert(int pos, K pk) {
-        // TODO Auto-generated method stub
-        return false;
+
+        SimpleListNode<K> node = new SimpleListNode<K>(pk);
+
+        // Check valid position
+        if((pos < 0) || (pos > this.length)) {
+            return false;
+        }
+
+        // Search position
+        SimpleListNode<K> previous = null;
+        SimpleListNode<K> current = this.head;
+        for(int i = 0; i != pos; i++) {
+            previous = current;
+            current = current.getNext();
+        }
+
+        // Insert node
+        node.setNext(current);
+        if(previous != null) {
+            previous.setNext(node);
+        }
+
+        // Check head
+        if(current == this.head) {
+            this.head = node;
+        }
+        // Check tail
+        if(previous == this.tail) {
+            this.tail = node;
+        }
+
+        this.length += 1;
+        return true;
     }
 
     @Override
@@ -180,10 +208,30 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
         this.length = 0;
         return true;
     }
-    
+
     @Override
     public Iterator<K> iterator() {
         return new SimpleListIterator<K>(this);
+    }
+
+    public String describe() {
+        StringBuilder result = new StringBuilder();
+
+        result.append("List: ");
+        for(K k : this) {
+            result.append(String.format("%s ", k.toString()));
+        }
+        result.append("\n");
+
+        result.append(String.format("Length: %d\n", this.length));
+        result.append(
+                String.format("Head: %s\n", this.head.getElem().toString())
+            );
+        result.append(
+                String.format("Tail: %s\n", this.tail.getElem().toString())
+            );
+
+        return result.toString();
     }
 }
 

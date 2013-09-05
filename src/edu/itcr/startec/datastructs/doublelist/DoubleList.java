@@ -96,14 +96,14 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
     @Override
     public boolean append(K pk) {
-        
-    	DoubleListNode<K> node = new DoubleListNode<K>(pk);
-        
+
+        DoubleListNode<K> node = new DoubleListNode<K>(pk);
+
         if(isEmpty()) {
-            this.head = node;            
+            this.head = node;
         } else {
             this.tail.setNext(node);
-        }        
+        }
         this.tail = node;
         this.length += 1;
         return true;
