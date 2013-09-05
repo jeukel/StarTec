@@ -112,32 +112,39 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
             return false;
         }
         
-        if(this.length == 1) {
-            if(this.head.getElem().equals(pk)) {
-                clear();
-                this.length -= 1;
-                return true;
-            }
-            return false;
-        }
-        
-        SimpleListNode<K> previous = this.head;
-        SimpleListNode<K> current = this.head.getNext();
+        // Search node
+        SimpleListNode<K> previous = null;
+        SimpleListNode<K> current = this.head;
         while(current != null) {
             if(current.getElem().equals(pk)) {
-                // Remove node
-                previous.setNext(current.getNext());
-                current.setNext(null);
-                current = null;
-                this.length -= 1;
-                return true;
+                break;
             }
-            
             previous = current;
             current = current.getNext();
         }
-        
-        return false;
+
+        // If not found
+        if(current == null) {
+            return false;
+        }
+
+        // Found, check head
+        if(current == this.head) {
+            this.head = current.getNext();
+        }
+        // Found, check tail
+        if(current == this.tail) {
+            this.tail = previous;
+        }
+
+        // Remove node
+        if(previous != null) {
+            previous.setNext(current.getNext());
+        }
+        current.setNext(null);
+        current = null;
+        this.length -= 1;
+        return true;
     }
 
     @Override
