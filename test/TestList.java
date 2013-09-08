@@ -1,10 +1,11 @@
 import edu.itcr.startec.datastructs.simplelist.SimpleList;
+import edu.itcr.startec.datastructs.doublelist.DoubleList;
 
 
 public class TestList {
 
     public static void main(String[] args) {
-
+    	
         SimpleList<Integer> mylist = new SimpleList<Integer>();
 
         mylist.append(1);
@@ -39,5 +40,42 @@ public class TestList {
         mylist2.insert(3, "Bonejo");
 
         System.out.println(mylist2.describe());
+        
+    	
+        DoubleList<Integer> mylist3 = new DoubleList<Integer>();
+
+        mylist3.append(1);
+        mylist3.append(2);
+        mylist3.append(3);
+        mylist3.append(4);
+        mylist3.append(5);
+        mylist3.append(6);
+
+        System.out.println(mylist3.describe());
+
+        DoubleList<String> mylist4 = new DoubleList<String>();
+
+        mylist4.append("Foo");
+        mylist4.append("Bar");
+        mylist4.append("Jam");
+        mylist4.append("Eggs");
+        mylist4.append("Hell");
+        mylist4.append("Gatito");
+
+        System.out.println(mylist4.describe());
+
+        mylist4.delete("Gatito");
+        mylist4.delete("Foo");
+        mylist4.delete("Jam");
+
+        System.out.println(mylist4.describe());
+
+        mylist4.insert(0, "Gatito");
+        mylist4.insert(0, "Bichito");
+        System.out.println(mylist4.describe());
+        mylist4.insert(5, "Baboom");
+        mylist4.insert(3, "Bonejo");
+
+        System.out.println(mylist4.describe());
     }
 }

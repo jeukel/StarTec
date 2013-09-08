@@ -24,6 +24,10 @@ class DoubleListNode<K> {
     public void setNext(DoubleListNode<K> next) {
         this.next = next;
     }
+    
+    public void setPrevious(DoubleListNode<K> previous) {
+        this.previous = previous;
+    }
 
     public DoubleListNode<K> getNext() {
         return this.next;
@@ -40,8 +44,8 @@ class DoubleListNode<K> {
 
 class DoubleListIterator<K> implements Iterator<K> {
 
-	DoubleList<K> list;
-	DoubleListNode<K> current;
+    DoubleList<K> list;
+    DoubleListNode<K> current;
     
     public DoubleListIterator(DoubleList<K> list) {
         this.list = list;
@@ -101,8 +105,10 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
         if(isEmpty()) {
             this.head = node;
+            this.tail = node;
         } else {
             this.tail.setNext(node);
+            node.setPrevious(this.tail);
         }
         this.tail = node;
         this.length += 1;
@@ -115,7 +121,6 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         if(isEmpty()) {
             return false;
         }
-        
         if(this.length == 1) {
             if(this.head.getElem().equals(pk)) {
                 clear();
@@ -125,22 +130,29 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
             return false;
         }
         
-        DoubleListNode<K> previous = this.head;
-        DoubleListNode<K> current = this.head.getNext();
+        DoubleListNode<K> current = this.head;
         while(current != null) {
             if(current.getElem().equals(pk)) {
                 // Remove node
-                previous.setNext(current.getNext());
+                if(current == this.tail){
+                	this.tail = current.getPrevious();
+                	current.previous.setNext(current.getNext());
+                	return true;
+                }
+                if (current == this.head){
+                	this.head = current.getNext();
+                	current.getNext().setPrevious(current.getPrevious()); 
+                	return true;
+                }
+                current.previous.setNext(current.getNext());
+                current.getNext().setPrevious(current.previous);
                 current.setNext(null);
                 current = null;
                 this.length -= 1;
                 return true;
-            }
-            
-            previous = current;
+            }            
             current = current.getNext();
-        }
-        
+        }        
         return false;
     }
 
@@ -161,8 +173,38 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
     @Override
     public boolean insert(int pos, K pk) {
-        // TODO Auto-generated method stub
-        return false;
+    	DoubleListNode<K> node = new DoubleListNode<K>(pk);
+
+        // Check valid position
+        if((pos < 0) || (pos > this.length)) {
+            return false;
+        }
+
+        // Search position
+        DoubleListNode<K> current = this.head;
+        for(int i = 0; i != pos; i++) {
+            current = current.getNext();
+        }
+
+        // Insert node
+        node.setNext(current);
+        node.setPrevious(current.previous);
+        if(current.previous != null) {
+        	current.previous.setNext(node);
+        	current.setPrevious(node);
+        }
+
+        // Check head
+        if(current == this.head) {
+            this.head = node;
+        }
+        // Check tail
+        if(current.previous == this.tail) {
+            this.tail = node;
+        }
+
+        this.length += 1;
+        return true;
     }
 
     @Override
@@ -181,5 +223,25 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
     @Override
     public Iterator<K> iterator() {
         return new DoubleListIterator<K>(this);
+    }
+    
+    public String describe() {
+        StringBuilder result = new StringBuilder();
+
+        result.append("List: ");
+        for(K k : this) {
+            result.append(String.format("%s ", k.toString()));
+        }
+        result.append("\n");
+
+        result.append(String.format("Length: %d\n", this.length));
+        result.append(
+                String.format("Head: %s\n", this.head.getElem().toString())
+            );
+        result.append(
+                String.format("Tail: %s\n", this.tail.getElem().toString())
+            );
+
+        return result.toString();
     }
 }
