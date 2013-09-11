@@ -137,11 +137,13 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
                 if(current == this.tail){
                 	this.tail = current.getPrevious();
                 	current.previous.setNext(current.getNext());
+                	this.length -= 1;
                 	return true;
                 }
                 if (current == this.head){
                 	this.head = current.getNext();
-                	current.getNext().setPrevious(current.getPrevious()); 
+                	current.getNext().setPrevious(current.getPrevious());
+                	this.length -= 1;
                 	return true;
                 }
                 current.previous.setNext(current.getNext());
@@ -171,7 +173,7 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         return false;
     }
 
-    @Override
+	@Override
     public boolean insert(int pos, K pk) {
     	DoubleListNode<K> node = new DoubleListNode<K>(pk);
 
@@ -183,15 +185,21 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         // Search position
         DoubleListNode<K> current = this.head;
         for(int i = 0; i != pos; i++) {
-            current = current.getNext();
+        	current = current.getNext();
         }
-
+        
         // Insert node
-        node.setNext(current);
-        node.setPrevious(current.previous);
-        if(current.previous != null) {
-        	current.previous.setNext(node);
-        	current.setPrevious(node);
+        if(current == null){
+            tail.setNext(node);
+            node.setPrevious(this.tail);
+        }else{
+	        node.setNext(current);
+	        node.setPrevious(current.previous);
+	        
+	        if(current.previous != null) {
+	        	current.previous.setNext(node);
+	        	current.setPrevious(node);
+	        }
         }
 
         // Check head
@@ -199,10 +207,9 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
             this.head = node;
         }
         // Check tail
-        if(current.previous == this.tail) {
-            this.tail = node;
-        }
-
+        if(current == null){
+        	this.tail = tail.getNext();
+		}
         this.length += 1;
         return true;
     }

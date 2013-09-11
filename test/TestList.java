@@ -31,16 +31,18 @@ public class TestList {
         mylist2.delete("Gatito");
         mylist2.delete("Foo");
         mylist2.delete("Jam");
+        //mylist2.delete("Toro");
 
         System.out.println(mylist2.describe());
 
         mylist2.insert(0, "Gatito");
-        mylist2.insert(0, "Bichito");
+        mylist2.insert(1, "Bichito");
         mylist2.insert(5, "Baboom");
         mylist2.insert(3, "Bonejo");
 
         System.out.println(mylist2.describe());
         
+        System.out.println("------------------------------------------------------------");
     	
         DoubleList<Integer> mylist3 = new DoubleList<Integer>();
 
@@ -70,12 +72,11 @@ public class TestList {
 
         System.out.println(mylist4.describe());
 
-        mylist4.insert(0, "Gatito");
-        mylist4.insert(0, "Bichito");
+        
+        mylist4.insert(0, "Gatito");;
+        mylist4.insert(2, "Bonejo");
         System.out.println(mylist4.describe());
         mylist4.insert(5, "Baboom");
-        mylist4.insert(3, "Bonejo");
-
         System.out.println(mylist4.describe());
     }
 }
