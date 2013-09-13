@@ -185,21 +185,20 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         // Search position
         DoubleListNode<K> current = this.head;
         for(int i = 0; i != pos; i++) {
-        	current = current.getNext();
+            current = current.getNext();
         }
         
         // Insert node
         if(current == null){
-            tail.setNext(node);
+            this.tail.setNext(node);
             node.setPrevious(this.tail);
-        }else{
-	        node.setNext(current);
-	        node.setPrevious(current.previous);
-	        
-	        if(current.previous != null) {
-	        	current.previous.setNext(node);
-	        	current.setPrevious(node);
-	        }
+        } else {
+            node.setNext(current);
+            node.setPrevious(current.previous);
+            if(current.previous != null) {
+                current.previous.setNext(node);
+                current.setPrevious(node);
+            }
         }
 
         // Check head
@@ -208,8 +207,8 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         }
         // Check tail
         if(current == null){
-        	this.tail = tail.getNext();
-		}
+            this.tail = tail.getNext();
+        }
         this.length += 1;
         return true;
     }
