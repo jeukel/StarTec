@@ -173,9 +173,10 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         return false;
     }
 
-	@Override
+    @Override
     public boolean insert(int pos, K pk) {
-    	DoubleListNode<K> node = new DoubleListNode<K>(pk);
+        DoubleListNode<K> node = new DoubleListNode<K>(pk);
+        int i;
 
         // Check valid position
         if((pos < 0) || (pos > this.length)) {
@@ -184,12 +185,12 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
         // Search position
         DoubleListNode<K> current = this.head;
-        for(int i = 0; i != pos; i++) {
+        for(i = 0; i != pos; i++) {
             current = current.getNext();
         }
         
         // Insert node
-        if(current == null){
+        if(this.length == i){
             this.tail.setNext(node);
             node.setPrevious(this.tail);
         } else {
@@ -206,7 +207,7 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
             this.head = node;
         }
         // Check tail
-        if(current == null){
+        if(this.length == i){
             this.tail = tail.getNext();
         }
         this.length += 1;
