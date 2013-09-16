@@ -247,5 +247,18 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
 
         return result.toString();
     }
+
+    @Override
+    public boolean delete() {
+        //Set tmp list
+        SimpleListNode<K> node = this.head.getNext();
+        
+        //Destroy
+        this.head = null;
+        
+        //Set new list
+        this.head = node;
+        return true;
+    }
 }
 

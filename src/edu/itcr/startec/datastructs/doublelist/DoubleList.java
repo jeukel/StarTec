@@ -266,4 +266,18 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         this.length += 1;
         return true;
 	}
+
+	@Override
+	public boolean delete() {
+		//Set tmp list
+        DoubleListNode<K> node = this.head.getNext();
+        
+        //Destroy
+        this.head.getNext().setPrevious(null);
+        this.head = null;
+                
+        //Set new list
+        this.head = node;
+        return true;
+	}
 }
