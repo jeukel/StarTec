@@ -195,6 +195,20 @@ public class SimpleList<K> implements ListInterface<K>, Iterable<K> {
         this.length += 1;
         return true;
     }
+    
+    @Override
+    public boolean insert(K pk) {
+        SimpleListNode<K> node = new SimpleListNode<K>(pk);
+
+        // Insert node
+        node.setNext(this.head);
+
+        // Check head
+        this.head = node;
+
+        this.length += 1;
+        return true;
+    }
 
     @Override
     public boolean clear() {

@@ -216,7 +216,7 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
     @Override
     public boolean clear() {
-    	DoubleListNode<K> temp = null;
+        DoubleListNode<K> temp = null;
         while(this.head != null) {
             temp = this.head.getNext(); 
             this.head.setNext(null);
@@ -251,4 +251,19 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 
         return result.toString();
     }
+
+    @Override
+    public boolean insert(K pk) {
+        DoubleListNode<K> node = new DoubleListNode<K>(pk);
+
+        // Insert node
+        node.setNext(this.head);
+        this.head.setPrevious(node);
+
+        // Check head
+        this.head = node;
+
+        this.length += 1;
+        return true;
+	}
 }

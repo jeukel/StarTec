@@ -7,5 +7,6 @@ public interface ListInterface<K> {
     public boolean delete(K pk);
     public boolean exists(K pk);
     public boolean insert(int pos, K pk);
+    public boolean insert(K pk);
     public boolean clear();
 }
