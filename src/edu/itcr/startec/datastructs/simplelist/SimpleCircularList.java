@@ -233,4 +233,16 @@ public class SimpleCircularList<K> implements ListInterface<K>, Iterable<K> {
         this.head = node;
         return true;
     }
+
+	@Override
+	public K getHead() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public K getTail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -242,4 +242,16 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         this.head = node;
         return true;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public K getHead() {
+		return (K) this.head;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public K getTail() {
+		return (K) this.tail;
+	}
 }

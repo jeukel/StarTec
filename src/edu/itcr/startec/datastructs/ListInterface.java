@@ -11,4 +11,6 @@ public interface ListInterface<K> {
     public boolean insert(K pk);
     public boolean clear();
     public String describe();
+    public K getHead();
+    public K getTail();
 }
