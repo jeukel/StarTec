@@ -1,6 +1,6 @@
 package edu.itcr.startec.datastructs.doublelist;
 
-class DoubleListNode<K> {
+public class DoubleListNode<K> {
     
     protected K elem;
     protected DoubleListNode<K> next;
