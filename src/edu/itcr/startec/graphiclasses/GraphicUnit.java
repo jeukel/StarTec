@@ -19,13 +19,12 @@ public class GraphicUnit implements iSubject{
     private ArrayList<iObserver> _observers = new ArrayList<iObserver>  ();
     private int _x;
     private int _y;
-    private String path;
     private ImageIcon i;
 
-    public GraphicUnit(){
+    public GraphicUnit(String path){
         this._x= 16;
         this._y= 1;
-        this.i = new ImageIcon(this.path + "/img/rie.png");
+        this.i = new ImageIcon(path);
     }
     
 //    public void getPath(){

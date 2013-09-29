@@ -219,9 +219,12 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         DoubleListNode<K> node = new DoubleListNode<K>(pk);
 
         // Insert node
-        node.setNext(this.head);
-        this.head.setPrevious(node);
-
+        if (this.head == null){
+        	this.tail = node;
+        }else{
+        	node.setNext(this.head);
+        	this.head.setPrevious(node);
+        }
         // Check head
         this.head = node;
 
@@ -268,6 +271,7 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 			this.tail = this.tail.getPrevious();
 			this.tail.setNext(null);
 		}
+		this.length--;
 		return true;
 	}
 }
