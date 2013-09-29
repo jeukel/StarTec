@@ -10,6 +10,7 @@ public interface ListInterface<K> {
     public boolean insert(int pos, K pk);
     public boolean insert(K pk);
     public boolean clear();
+    public boolean cut();
     public String describe();
     public K getHead();
     public K getTail();

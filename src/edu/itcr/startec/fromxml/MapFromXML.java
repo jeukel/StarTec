@@ -1,7 +1,6 @@
-package edu.itcr.startec.facade.mapconstruction;
+package edu.itcr.startec.fromxml;
 
 import edu.itcr.startec.datastructs.doublelist.DoubleList;
-import edu.itcr.startec.datastructs.simplelist.SimpleList;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,21 +16,21 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
  
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class CreateMapFromXML<K> extends DoubleList<K>{
+public class MapFromXML<K> extends DoubleList<K>{
 	DoubleList<	DoubleList<String>> map;
 
-	public CreateMapFromXML(){
+	public MapFromXML(){
 		map = new DoubleList<DoubleList<String>>();
 	}
 	
 	public DoubleList<DoubleList<String>> XMLtoMap (){
 		try {
+			String path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File("/home/jeukel/map.xml"));
+            		new FileInputStream(new File(path + "/xml/map.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -41,19 +40,39 @@ public class CreateMapFromXML<K> extends DoubleList<K>{
             System.out.println("************************************");
             
             String expression01 = "/Map/Column/Node/type";
-            String expressionX = "/Map/Size/x";
             String expressionY = "/Map/Size/y";
-            NodeList nodeList01 = 
-            		(NodeList) xPath.compile(expression01).evaluate(xmlDocument, XPathConstants.NODESET);
-            int x = Integer.parseInt(xPath.compile(expressionX).evaluate(xmlDocument));
-            int y = Integer.parseInt(xPath.compile(expressionY).evaluate(xmlDocument));
             
+            NodeList nodeList01 = 
+            		(NodeList) xPath.compile(expression01)
+            						.evaluate(xmlDocument, 
+            								  XPathConstants.NODESET);
+            
+            int y = Integer.parseInt(xPath.compile(expressionY)
+            							  .evaluate(xmlDocument));
+            
+        	DoubleList<String> column = new DoubleList<String>();
+        	
             for (int i = 0; i < nodeList01.getLength(); i++) {
-            	DoubleList<String> column = new DoubleList<String>();
-            	for (int j = 1; j <= x; j++ ){
-            		column.append(nodeList01.item(i).getFirstChild().getNodeValue());
+            	if(i < 9){
+	        		System.out.println("Inserting node " + "00" + (i+1) + ": " +
+	        						  nodeList01.item(i).getFirstChild()
+	        											.getNodeValue());
+            	} else if ((i+1) >= 10 && i < 99) {
+            		System.out.println("Inserting node " + "0" + (i+1) + ": " +
+  						  nodeList01.item(i).getFirstChild()
+  											.getNodeValue());
+            	} else {
+            		System.out.println("Inserting node " + (i+1) + ": " +
+  						  nodeList01.item(i).getFirstChild()
+  											.getNodeValue());
             	}
-            	map.append(column);
+            	
+        		column.append(nodeList01.item(i).getFirstChild()
+        										.getNodeValue());
+        		if (y == column.length()) {
+        			map.append(column);
+        			column.clear();
+        		}
             }
             
             System.out.println("************************************");

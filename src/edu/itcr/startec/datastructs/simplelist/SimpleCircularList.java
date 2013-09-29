@@ -245,4 +245,10 @@ public class SimpleCircularList<K> implements ListInterface<K>, Iterable<K> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public boolean cut() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

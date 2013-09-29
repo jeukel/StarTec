@@ -229,6 +229,7 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
         return true;
 	}
 
+	//Erase first node
 	@Override
 	public boolean delete() {
 		//Set tmp list
@@ -253,5 +254,20 @@ public class DoubleList<K> implements ListInterface<K>, Iterable<K> {
 	@Override
 	public K getTail() {
 		return (K) this.tail;
+	}
+
+	//Erase last node
+	@Override
+	public boolean cut() {
+		if (this.tail == null){
+			return false;
+		} else if (this.tail.getPrevious() == null){
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.tail = this.tail.getPrevious();
+			this.tail.setNext(null);
+		}
+		return true;
 	}
 }

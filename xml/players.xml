@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Players>
+    <Player group="Colonizer" type="admin">
+        <firstname>Luis</firstname>
+        <nick>Zyoruk</nick>
+    </Employee>
+    <Employee group="Destroyer" type="admin">
+        <firstname>Daniel</firstname>
+        <nick>Jeukel</nick>
+    </Employee>
+</Players>

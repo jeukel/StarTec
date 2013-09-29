@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<Units>
+    <Unit class='Peon'>
+        <strenght>0</strenght>
+        <cost>0</cost>
+        <hitpoints>0</hitpoints>
+        <movespeed>0</movespeed>
+        <weightlimit>0</weightlimit>
+        <weight>0</weight>
+        <mana>0</mana>
+        <intelligence>0</intelligence>
+        <resistance>0</resistance>
+        <maxHitPoints>0</maxHitPoints>
+        <level>0</level>
+        <isActive>0</isActive>
+    </Unit>
+
+    <Unit class='Shaman'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='FuerzasEspeciales'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='Escolta'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='Enfermero'>
+        <strenght>0</strenght>
+        <cost>0</cost>
+        <hitpoints>0</hitpoints>
+        <movespeed>0</movespeed>
+        <weightlimit>0</weightlimit>
+        <weight>0</weight>
+        <mana>0</mana>
+        <intelligence>0</intelligence>
+        <resistance>0</resistance>
+        <maxHitPoints>0</maxHitPoints>
+        <level>0</level>
+        <isActive>0</isActive>
+    </Unit>
+
+    <Unit class='PeonElite'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='Soldado'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='Tanque'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='DobleAgente'>
+        <strenght>0</strenght>
+        <cost>0</cost>
+        <hitpoints>0</hitpoints>
+        <movespeed>0</movespeed>
+        <weightlimit>0</weightlimit>
+        <weight>0</weight>
+        <mana>0</mana>
+        <intelligence>0</intelligence>
+        <resistance>0</resistance>
+        <maxHitPoints>0</maxHitPoints>
+        <level>0</level>
+        <isActive>0</isActive>
+    </Unit>
+
+    <Unit class='Panzer'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='Kamikaze'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+    <Unit class='007'>
+        <strenght></strenght>
+        <cost></cost>
+        <hitpoints></hitpoints>
+        <movespeed></movespeed>
+        <weightlimit></weightlimit>
+        <weight></weight>
+        <mana></mana>
+        <intelligence></intelligence>
+        <resistance></resistance>
+        <maxHitPoints></maxHitPoints>
+        <level></level>
+        <isActive></isActive>
+    </Unit>
+
+</Units>

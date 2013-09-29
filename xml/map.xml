@@ -1,0 +1,551 @@
+<?xml version="1.0"?>
+
+<Map>
+    <Size>
+        <x>8</x>
+        <y>16</y>
+    </Size>
+
+    <Column name="A">
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="B">
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="C">
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="D">
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="E">
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="F">
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="G">
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+
+        <Node>
+            <type>water</type>
+        </Node>
+    </Column>
+
+    //*****************************************************//
+
+    <Column name="H">
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>earth</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+
+        <Node>
+            <type>air</type>
+        </Node>
+    </Column>
+
+</Map>
