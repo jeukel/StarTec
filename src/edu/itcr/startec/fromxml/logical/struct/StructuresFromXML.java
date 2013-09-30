@@ -1,4 +1,4 @@
-package edu.itcr.startec.fromxml;
+package edu.itcr.startec.fromxml.logical.struct;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,19 +14,28 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class GStructuresFromXML {
+import edu.itcr.startec.datastructs.simplelist.SimpleList;
+
+public class StructuresFromXML {
 	String path;
 	NodeList nodeList;
+	SimpleList<String> list;
 	
-	public String metropoliXMLGStructure(){
+	public StructuresFromXML(){
+		list = new SimpleList<String>();
+	}
+	
+	
+	public SimpleList<String> metropoliXMLStructure (){
 		try {
 			String path = new File(".").getCanonicalPath();
             FileInputStream file = 
             		new FileInputStream(new File(path
-            									 + "/xml/papabuildingG.xml"));
+            									 + "/xml/papabuilding.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -35,17 +44,21 @@ public class GStructuresFromXML {
  
             System.out.println("************************************");
             
-            String expression01 = "/StructuresG/Structure[@class='Metropoli']" 
-            					+ "/resistance";
+            String expression01 = "/Structures/Structure[@class='Metropoli']";
             
-            NodeList nodeList = (NodeList) xPath.compile(expression01)
-            									.evaluate(xmlDocument,
-            											  XPathConstants
-            											  .NODESET);
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                System.out.println(nodeList.item(i).getFirstChild()
-                								   .getNodeValue());
-                path = nodeList.item(i).getFirstChild().getNodeValue();
+            Node node01 = (Node) xPath.compile(expression01)
+            		.evaluate(xmlDocument, XPathConstants.NODE);
+
+            if(null != node01) {
+                nodeList = node01.getChildNodes();
+                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
+                    Node nod = nodeList.item(i);
+                    if(nod.getNodeType() == Node.ELEMENT_NODE){
+                        System.out.println(nodeList.item(i).getNodeName() 
+                        		+ " : " + nod.getFirstChild().getNodeValue());
+                        list.append(nod.getFirstChild().getNodeValue());
+                    }
+                }
             }
             
             System.out.println("************************************");
@@ -61,15 +74,15 @@ public class GStructuresFromXML {
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return path;
+		return list;
 	}
 	
-	public String mezquitaXMLGStructure (){
+	public SimpleList<String> mezquitaXMLStructure (){
 		try {
 			String path = new File(".").getCanonicalPath();
             FileInputStream file = 
             		new FileInputStream(new File(path
-            									 + "/xml/papabuildingG.xml"));
+            									 + "/xml/papabuilding.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -78,17 +91,21 @@ public class GStructuresFromXML {
  
             System.out.println("************************************");
             
-            String expression01 = "/StructuresG/Structure[@class='Metropoli']" 
-            					+ "/resistance";
+            String expression01 = "/Structures/Structure[@class='Mezquita']";
             
-            NodeList nodeList = (NodeList) xPath.compile(expression01)
-            									.evaluate(xmlDocument,
-            											  XPathConstants
-            											  .NODESET);
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                System.out.println(nodeList.item(i).getFirstChild()
-                								   .getNodeValue());
-                path = nodeList.item(i).getFirstChild().getNodeValue();
+            Node node01 = (Node) xPath.compile(expression01)
+            		.evaluate(xmlDocument, XPathConstants.NODE);
+
+            if(null != node01) {
+                nodeList = node01.getChildNodes();
+                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
+                    Node nod = nodeList.item(i);
+                    if(nod.getNodeType() == Node.ELEMENT_NODE){
+                        System.out.println(nodeList.item(i).getNodeName() 
+                        		+ " : " + nod.getFirstChild().getNodeValue());
+                        list.append(nod.getFirstChild().getNodeValue());
+                    }
+                }
             }
             
             System.out.println("************************************");
@@ -104,34 +121,38 @@ public class GStructuresFromXML {
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return path;
+		return list;
 	}
 	
-	public String minaXMLGStructure (){
+	public SimpleList<String> minaXMLStructure (){
 		try {
 			String path = new File(".").getCanonicalPath();
             FileInputStream file = 
             		new FileInputStream(new File(path
-            									 + "/xml/papabuildingG.xml"));
+            									 + "/xml/papabuilding.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
             Document xmlDocument = builder.parse(file); 
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
-System.out.println("************************************");
+            System.out.println("************************************");
             
-            String expression01 = "/StructuresG/Structure[@class='Mina']" 
-            					+ "/resistance";
+            String expression01 = "/Structures/Structure[@class='Mina']";
             
-            NodeList nodeList = (NodeList) xPath.compile(expression01)
-            									.evaluate(xmlDocument,
-            											  XPathConstants
-            											  .NODESET);
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                System.out.println(nodeList.item(i).getFirstChild()
-                								   .getNodeValue());
-                path = nodeList.item(i).getFirstChild().getNodeValue();
+            Node node01 = (Node) xPath.compile(expression01)
+            		.evaluate(xmlDocument, XPathConstants.NODE);
+
+            if(null != node01) {
+                nodeList = node01.getChildNodes();
+                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
+                    Node nod = nodeList.item(i);
+                    if(nod.getNodeType() == Node.ELEMENT_NODE){
+                        System.out.println(nodeList.item(i).getNodeName() 
+                        		+ " : " + nod.getFirstChild().getNodeValue());
+                        list.append(nod.getFirstChild().getNodeValue());
+                    }
+                }
             }
             
             System.out.println("************************************");
@@ -147,7 +168,6 @@ System.out.println("************************************");
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return path;
-	}
-	
+		return list;
+	}	
 }

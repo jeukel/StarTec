@@ -1,4 +1,4 @@
-package edu.itcr.startec.fromxml;
+package edu.itcr.startec.fromxml.graphical.struct;
 
 import java.io.File;
 import java.io.IOException;

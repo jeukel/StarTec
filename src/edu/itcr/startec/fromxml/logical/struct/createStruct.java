@@ -1,4 +1,4 @@
-package edu.itcr.startec.fromxml;
+package edu.itcr.startec.fromxml.logical.struct;
 
 import edu.itcr.startec.logicclasses.structs.PapaBuilding;
 

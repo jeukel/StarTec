@@ -1,7 +1,8 @@
 import edu.itcr.startec.datastructs.doublelist.DoubleList;
 import edu.itcr.startec.fromxml.MapFromXML;
-import edu.itcr.startec.fromxml.GStructuresFromXML;
-import edu.itcr.startec.fromxml.UnitsFromXML;
+import edu.itcr.startec.fromxml.graphical.struct.GStructuresFromXML;
+import edu.itcr.startec.fromxml.logical.unit.UnitsFromXML;
+
 
 
 public class XMLRead {

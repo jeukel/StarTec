@@ -64,7 +64,25 @@ public class PapaBicho implements iObserver {
                 this._hitpoints = 0;
         }		
     }
-
+    
+    public String getAttributes(){
+		StringBuilder result = new StringBuilder();
+		result.append("Attributes: ");
+		result.append("\n");
+		result.append(String.format("Strenght: %d\n",this._strenght));
+		result.append(String.format("Intelligence: %d\n",this._intelligence));
+		result.append(String.format("Cost: %d\n",this._price));
+		result.append(String.format("Movement speed: %d\n",this._movespeed));
+		result.append(String.format("Resistance: %d\n",this._resistance));
+		result.append(String.format("Hitpoints: %d\n",this._hitpoints));
+		result.append(String.format("MaxHitPoints: %d\n",this._maxHitPoints));
+		result.append(String.format("Weight: %d\n",this._weight));
+		result.append(String.format("Weight limit: %d\n",this._weightlimit));
+		result.append(String.format("Level: %s\n",this._level));
+		result.append(String.format("Mana: %d\n",this._mana));
+		return result.toString();
+	}
+    
     public void attack(PapaBicho pBicho){
     /**
      * This is going to execute takeDamage of the enemy.

@@ -14,6 +14,16 @@ public class PapaBuilding {
 		this.y = py;
 	}
 	
+	public String getAttributes(){
+    	StringBuilder result = new StringBuilder();
+    	
+    	result.append("Attributes: ");
+    	result.append("\n");
+    	result.append(String.format("Resistance: %d\n",this._resistance));
+    	result.append(String.format("Hit Points: %d\n",this._hitpoints));
+    	return result.toString();
+    }
+	
 	public int takeDamage(int pDamage){
 		this._hitpoints = this._hitpoints - (pDamage - this._resistance);
 		return this._hitpoints;
