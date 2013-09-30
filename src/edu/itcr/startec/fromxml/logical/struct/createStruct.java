@@ -3,7 +3,11 @@ package edu.itcr.startec.fromxml.logical.struct;
 import edu.itcr.startec.logicclasses.structs.PapaBuilding;
 
 public class createStruct {
-	StructuresFromXML struct= new StructuresFromXML();
+	StructuresFromXML struct;
+	
+	public createStruct(){
+		struct = new StructuresFromXML();
+	}
 	
 	public PapaBuilding Factory (String pBicho){
 		if(pBicho == "mina"){
