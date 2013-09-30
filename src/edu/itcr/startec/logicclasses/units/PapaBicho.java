@@ -23,26 +23,26 @@ public class PapaBicho implements iObserver {
     protected int _maxHitPoints;
     protected int x;
     protected int y;
-    protected boolean isActive;
+    protected String _level;
+    protected String isActive;
     
-    public PapaBicho (int pPrice,int pIntelligence,int pStrenght, int pWeight,
-    				  int pResistance, int pMovespeed,int pHitpoints,
-    				  int pWeightLimit, int pMana,int pMaxHitPoints ){
-    	
+    public PapaBicho (String pLevel, int pPrice,int pIntelligence,int pStrenght,
+    				  int pWeight,int pResistance, int pMovespeed,int pHitpoints
+    				  ,int pWeightLimit, int pMana,int pMaxHitPoints ){
         /**This is meant to be used with XML Parsing to set the attributes. So, 
     	*each one of the parameters are methods to get the attribute of the unit
     	*/
-        this._hitpoints = pHitpoints;
-	this._maxHitPoints = pMaxHitPoints;
-        this._intelligence = pIntelligence;
-        this._mana = pMana;
-        this._movespeed = pMovespeed;
-        this._resistance = pResistance;
-        this._strenght = pStrenght;
-        this._weight = pWeight;
-        this._weightlimit = pWeightLimit;
-        this._price = pPrice;
-        this.isActive = false;
+        this._hitpoints=pHitpoints;
+	this._maxHitPoints= pMaxHitPoints;
+        this._intelligence=pIntelligence;
+        this._mana=pMana;
+        this._movespeed=pMovespeed;
+        this._resistance=pResistance;
+        this._strenght=pStrenght;
+        this._weight=pWeight;
+        this._weightlimit=pWeightLimit;
+        this._price=pPrice;
+        this._level=pLevel;
     }
 
     public void move (int px , int py){
@@ -77,7 +77,7 @@ public class PapaBicho implements iObserver {
     /**
      * This will set the unit IDLE.
      */
-        this.isActive = false;
+        this.isActive = "IDLE";
     }
 
     public int getPositionX(){
@@ -94,7 +94,7 @@ public class PapaBicho implements iObserver {
         return this.y;
     }
 
-    public boolean getStatus(){
+    public String getStatus(){
     /**Return the current value of isActive. For example , it would return 
      * "Moving " , "Harvesting"...
      * @return Current status.
@@ -102,10 +102,9 @@ public class PapaBicho implements iObserver {
         return this.isActive;		
     }
 
-    public void setStatus( boolean pStatus){
+    public void setStatus( String pStatus){
     /**This will just set the value of the variable isActive.
-     * @param pStatus is the string we are gonna set as this.status 
-     * for the unit.
+     * @param pStatus is the string we are gonna set as this.status fo the unit.
      */
         this.isActive= pStatus;
     }

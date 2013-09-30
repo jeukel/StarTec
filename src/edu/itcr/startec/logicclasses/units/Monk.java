@@ -11,13 +11,15 @@ import edu.itcr.startec.players.Player;
  * @author Luis Angel Simon Barrantes
  */
 public class Monk extends PapaBicho {
+	public boolean status;
 
-	public Monk(int pStr,int pPrice, int pHitPoints, int pMoveSpeed, 
-			int pWeightLimit,int pWeight, int pMana, int pIntelligence,
-			int pResist){
+	public Monk(String pLevel, int pPrice,int pIntelligence,int pStrenght,
+			  int pWeight,int pResistance, int pMovespeed,int pHitpoints
+			  ,int pWeightLimit, int pMana,int pMaxHitPoints){		
 
-		super(pResist, pResist, pResist, pResist, pResist, pResist, pResist, 
-			  pResist, pResist, pResist);
+		super(pLevel,pPrice,pIntelligence,pStrenght,pWeight,pResistance,
+				pMovespeed,pHitpoints,pWeightLimit,pMana,pMaxHitPoints);
+		this.status = false;
 	}    	
     
     public void convert(PapaBicho pBicho , Player<?>  pPlayer){
@@ -26,10 +28,8 @@ public class Monk extends PapaBicho {
          * enemy except buildings.
          */
     	if (this._intelligence > pBicho.getIntelligence() || 
-    		this._mana > pBicho.getMana()){
-    		
+    		this._mana > pBicho.getMana()){    		
     		pPlayer.getUnitsList().delete(this);
-    		
     	}
     }
     
@@ -40,9 +40,9 @@ public class Monk extends PapaBicho {
          */
     	int counter = 40;
     	while (counter != 0){
-    		this.setStatus(true);
+    		this.status = true;
     		counter--;
     	}
-    	this.setStatus(false);
+    	this.status = false;
     }
 }

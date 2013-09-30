@@ -2,9 +2,9 @@ package edu.itcr.startec.datastructs.doublelist;
 
 public class DoubleListNode<K> {
     
-    protected K elem;
-    protected DoubleListNode<K> next;
-    protected DoubleListNode<K> previous;
+    private K elem;
+    private DoubleListNode<K> next;
+    private DoubleListNode<K> previous;
     
     public DoubleListNode(K elem) {
         this.elem = elem;

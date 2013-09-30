@@ -11,12 +11,13 @@ package edu.itcr.startec.logicclasses.units;
  */
 public class ProHarvester extends Harvester{
 
-    public ProHarvester(int pStr,int pPrice, int pHitPoints, int pMoveSpeed, 
-    				 int pWeightLimit,int pWeight, int pMana,int pIntelligence,
-    				 int pResist,String pLevel){
+    public ProHarvester(String pLevel, int pPrice,int pIntelligence,
+    					int pStrenght, int pWeight,int pResistance,
+    					int pMovespeed,int pHitpoints,int pWeightLimit,
+    					int pMana,int pMaxHitPoints){
 
-    	super(pResist, pResist, pResist, pResist, pResist, pResist, pResist, 
-    		  pResist, pResist, pLevel);
+    	super(pLevel,pPrice,pIntelligence,pStrenght,pWeight,pResistance,
+				pMovespeed,pHitpoints,pWeightLimit,pMana,pMaxHitPoints);
     }
 
     public void harvest(){

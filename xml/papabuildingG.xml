@@ -5,19 +5,16 @@ and open the template in the editor.
 -->
 
 
-<Structures>
+<StructuresG>
     <Structure class='Metropoli'>
-        <resistance></resistance>
-        <hitpoints></hitpoints>
+        <resistance>/img/units/metropoli</resistance>
     </Structure>
 
     <Structure class='Mezquita'>
-        <resistance></resistance>
-        <hitpoints></hitpoints>
+        <resistance>/img/units/mezquita</resistance>
     </Structure>
 
     <Structure class='Mina'>
-        <resistance></resistance>
-        <hitpoints></hitpoints>
+        <resistance>/img/units/mina</resistance>
     </Structure>
-</Structures>
+</StructuresG>

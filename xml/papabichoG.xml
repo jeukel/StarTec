@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<UnitsG>
+    <Unit class='Peon'>
+        <strenght>'/img/units/peon'</strenght>
+    </Unit>
+
+    <Unit class='Shaman'>
+        <strenght>'/img/units/shaman'</strenght>
+    </Unit>
+
+    <Unit class='FuerzasEspeciales'>
+        <strenght>'/img/units/fuerzasespeciales'</strenght>
+    </Unit>
+
+    <Unit class='Escolta'>
+        <strenght>'/img/units/escolta'</strenght>
+    </Unit>
+
+    <Unit class='Enfermero'>
+        <strenght>'/img/units/enfermero'</strenght>
+    </Unit>
+
+    <Unit class='PeonElite'>
+        <strenght>'/img/units/peonelite'</strenght>
+    </Unit>
+
+    <Unit class='Soldado'>
+        <strenght>'/img/units/soldado'</strenght>
+    </Unit>
+
+    <Unit class='Tanque'>
+        <strenght>'/img/units/tanque'</strenght>
+    </Unit>
+
+    <Unit class='DobleAgente'>
+        <strenght>'/img/units/dobleagente'</strenght>
+    </Unit>
+
+    <Unit class='Panzer'>
+        <strenght>'/img/units/panzer'</strenght>
+    </Unit>
+
+    <Unit class='Kamikaze'>
+        <strenght>'/img/units/kamikaze'</strenght>
+    </Unit>
+
+    <Unit class='007'>
+        <strenght>'/img/units/007'</strenght>
+    </Unit>
+
+</UnitsG>

@@ -14,26 +14,18 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import edu.itcr.startec.datastructs.serializing.Queue;
-
-public class UnitsFromXML{
+public class GUnitsFromXML{
 	String path;
 	NodeList nodeList;
-	Queue<String> list;
 	
-	public UnitsFromXML(){
-		list = new Queue<String>();
-	}
-	
-	public Queue<String> peonXMLUnit(){
+	public String peonXMLUnit(){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -42,22 +34,19 @@ public class UnitsFromXML{
  
             System.out.println("************************************");
             
-            String expression01 = "/Units/Unit[@class='Peon']";
+            String expression01 = "/UnitsG/Unit[@class='Peon']" 
+            					+ "/strenght";
             
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
-            
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -71,14 +60,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> shamanXMLUnit (){
+	public String shamanXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -87,23 +76,19 @@ public class UnitsFromXML{
  
             System.out.println("************************************");
             
-            String expression01 = "/Units/Unit[@class='Shaman']";
+            String expression01 = "/UnitsG/Unit[@class='Shaman']" 
+								+ "/strenght";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
-            
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -117,14 +102,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> fuerzasEspecialesXMLUnit (){
+	public String fuerzasEspecialesXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -133,23 +118,19 @@ public class UnitsFromXML{
  
             System.out.println("************************************");
             
-            String expression01 = "/Units/Unit[@class='FuerzasEspeciales']";
+            String expression01 = "/UnitsG/Unit[@class='FuerzasEspeciales']" 
+								+ "/strenght";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
-            
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -163,14 +144,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> escoltaXMLUnit (){
+	public String escoltaXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -178,24 +159,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-
-            String expression01 = "/Units/Unit[@class='Escolta']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Escolta']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -209,14 +186,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
-	public Queue<String> enfermeroXMLUnit (){
+	public String enfermeroXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -224,23 +201,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='Enfermero']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Enfermero']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -254,14 +228,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> peonEliteXMLUnit (){
+	public String peonEliteXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -269,23 +243,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='PeonElite']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='PeonElite']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -299,14 +270,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
-	public Queue<String> soldadoXMLUnit (){
+	public String soldadoXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -314,23 +285,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='Soldado']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Soldado']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -344,14 +312,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
-	public Queue<String> tanqueXMLUnit (){
+	public String tanqueXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -359,23 +327,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='Tanque']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Tanque']" 
+					+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -389,14 +354,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> dobleAgenteXMLUnit (){
+	public String dobleAgenteXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -404,23 +369,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='DobleAgente']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='DobleAgente']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -434,14 +396,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
-	public Queue<String> panzerXMLUnit (){
+	public String panzerXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -449,23 +411,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='Panzer']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Panzer']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -479,14 +438,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
-	public Queue<String> kamikazeXMLUnit (){
+	public String kamikazeXMLUnit (){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -494,23 +453,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='Kamikaze']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='Kamikaze']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -524,14 +480,14 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 	
-	public Queue<String> doubleOsevenXMLUnit(){
+	public String doubleOsevenXMLUnit(){
 		try {
 			path = new File(".").getCanonicalPath();
             FileInputStream file = 
-            		new FileInputStream(new File(path + "/xml/papabicho.xml"));
+            		new FileInputStream(new File(path + "/xml/papabichoG.xml"));
             DocumentBuilderFactory builderFactory = 
             		DocumentBuilderFactory.newInstance();
             DocumentBuilder builder =  builderFactory.newDocumentBuilder();
@@ -539,23 +495,20 @@ public class UnitsFromXML{
             XPath xPath =  XPathFactory.newInstance().newXPath();
  
             System.out.println("************************************");
-            String expression01 = "/Units/Unit[@class='007']";
             
-            NodeList nodeList;
-            Node node01 = (Node) xPath.compile(expression01)
-            		.evaluate(xmlDocument, XPathConstants.NODE);
+            String expression01 = "/UnitsG/Unit[@class='007']" 
+								+ "/strenght";
             
-            if(null != node01) {
-                nodeList = node01.getChildNodes();
-                for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++){
-                    Node nod = nodeList.item(i);
-                    if(nod.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println(nodeList.item(i).getNodeName() 
-                        		+ " : " + nod.getFirstChild().getNodeValue());
-                        list.append(nod.getFirstChild().getNodeValue());
-                    }
-                }
+            NodeList nodeList = (NodeList) xPath.compile(expression01)
+            									.evaluate(xmlDocument,
+            											  XPathConstants
+            											  .NODESET);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                System.out.println(nodeList.item(i).getFirstChild()
+                								   .getNodeValue());
+                path = nodeList.item(i).getFirstChild().getNodeValue();
             }
+            
             System.out.println("************************************");
             
         } catch (FileNotFoundException e) {
@@ -569,7 +522,7 @@ public class UnitsFromXML{
         } catch (XPathExpressionException e) {
             e.printStackTrace();
         }
-		return list;
+		return path;
 	}
 
 

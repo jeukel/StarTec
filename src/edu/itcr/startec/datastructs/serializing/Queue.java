@@ -12,8 +12,8 @@ public class Queue<K> extends DoubleList<K>{
 		super.cut();
 	}
 
-	public void Peek(){
-		
+	public String Peek(){
+		return super.returnElem();
 	}
 
 }

@@ -12,6 +12,4 @@ public interface ListInterface<K> {
     public boolean clear();
     public boolean cut();
     public String describe();
-    public K getHead();
-    public K getTail();
 }

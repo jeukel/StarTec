@@ -1,5 +1,6 @@
 package edu.itcr.startec.fromxml;
 
+import edu.itcr.startec.datastructs.serializing.Queue;
 import edu.itcr.startec.logicclasses.units.Harvester;
 import edu.itcr.startec.logicclasses.units.Healer;
 import edu.itcr.startec.logicclasses.units.Kamikaze;
@@ -8,58 +9,132 @@ import edu.itcr.startec.logicclasses.units.PapaBicho;
 import edu.itcr.startec.logicclasses.units.ProHarvester;
 
 public class createUnit {
-	UnitsFromXML units= new UnitsFromXML();
+	UnitsFromXML units;
+	Queue <String> list;
+	String pLevel;
+	int pPrice;
+	int pIntelligence;
+	int pStrenght;
+	int pWeight;
+	int pResistance;
+	int pMovespeed;
+	int pHitpoints;
+	int pWeightLimit;
+	int pMana;
+	int pMaxHitPoints;
+	
+	public createUnit(){
+		units = new UnitsFromXML();
+		list = new Queue<String>();
+	}
 	
 	public PapaBicho Factory (String pBicho){
 		if(pBicho == "tank"){
-			units.tanqueXMLUnit();
-			PapaBicho tank = new PapaBicho(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-			return tank;
-			
+			list = units.tanqueXMLUnit();
+			setVar();
+			PapaBicho tank = new PapaBicho(pLevel,pPrice,pIntelligence,pStrenght
+										  ,pWeight,pResistance,pMovespeed,
+										  pHitpoints,pWeightLimit,pMana,
+										  pMaxHitPoints);
+			return tank;			
 		}else if(pBicho == "panzer" ){
-			units.panzerXMLUnit();
-			PapaBicho scout = new PapaBicho(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-			return scout;
-			
+			list = units.panzerXMLUnit();
+			setVar();
+			PapaBicho scout = new PapaBicho(pLevel,pPrice,pIntelligence,
+											pStrenght,pWeight,pResistance,
+											pMovespeed,pHitpoints,pWeightLimit,
+											pMana,pMaxHitPoints);
+			return scout;			
 		}else if(pBicho == "warrior" ){
-			units.soldadoXMLUnit();
-			PapaBicho warrior = new PapaBicho(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-			return warrior;
-			
+			list = units.soldadoXMLUnit();
+			setVar();
+			PapaBicho warrior = new PapaBicho(pLevel,pPrice,pIntelligence,
+											  pStrenght,pWeight,pResistance,
+											  pMovespeed,pHitpoints,pWeightLimit
+											  ,pMana,pMaxHitPoints);
+			return warrior;			
 		}else if (pBicho == "specialforce"){
-			units.dobleAgenteXMLUnit();
-			PapaBicho specialforce = new PapaBicho(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-			return specialforce;
-			
+			list = units.dobleAgenteXMLUnit();
+			setVar();
+			PapaBicho specialforce = new PapaBicho(pLevel,pPrice,pIntelligence,
+												   pStrenght,pWeight,pResistance
+												   ,pMovespeed,pHitpoints,
+												   pWeightLimit,pMana,
+												   pMaxHitPoints);
+			return specialforce;			
 		}else if(pBicho == "harvester"){
-			units.peonXMLUnit();
-			Harvester harvester = new Harvester(0, 0, 0, 0, 0, 0, 0, 0, 0, pBicho);
-			return harvester;
-			
+			list = units.peonXMLUnit();
+			setVar();
+			Harvester harvester = new Harvester(pLevel,pPrice,pIntelligence,
+												pStrenght,pWeight,pResistance,
+												pMovespeed,pHitpoints,
+												pWeightLimit,pMana,
+												pMaxHitPoints);
+			return harvester;			
 		}else if (pBicho == "proharvester"){
-			units.peonEliteXMLUnit();
-			ProHarvester proharvester = new ProHarvester(0, 0, 0, 0, 0, 0, 0, 0, 0, pBicho);
-			return proharvester;
-			
+			list = units.peonEliteXMLUnit();
+			setVar();
+			ProHarvester proharvester = new ProHarvester(pLevel,pPrice,
+														 pIntelligence,pStrenght
+														 ,pWeight,pResistance,
+														 pMovespeed,pHitpoints,
+														 pWeightLimit,pMana,
+														 pMaxHitPoints);
+			return proharvester;			
 		}else if (pBicho == "monk"){
-			units.shamanXMLUnit();
-			Monk monk = new Monk(0, 0, 0, 0, 0, 0, 0, 0, 0);
-			return monk;
-			
+			list = units.shamanXMLUnit();
+			setVar();
+			Monk monk = new Monk(pLevel,pPrice,pIntelligence,pStrenght,pWeight,
+								 pResistance,pMovespeed,pHitpoints,pWeightLimit,
+								 pMana,pMaxHitPoints);
+			return monk;			
 		}else if (pBicho=="healer"){
 			units.enfermeroXMLUnit();
-			Healer healer = new Healer(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, pBicho);
-			return healer;
-			
+			setVar();
+			Healer healer = new Healer(pLevel,pPrice,pIntelligence,pStrenght,
+									   pWeight,pResistance,pMovespeed,pHitpoints
+									   ,pWeightLimit,pMana,pMaxHitPoints);
+			return healer;			
 		}else if (pBicho == "kamikaze"){
 			units.kamikazeXMLUnit();
-			Kamikaze kamikaze = new Kamikaze(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, pBicho);
-			return kamikaze;
-			
+			setVar();
+			Kamikaze kamikaze = new Kamikaze(pLevel,pPrice,pIntelligence,
+											 pStrenght,pWeight,pResistance,
+											 pMovespeed,pHitpoints,pWeightLimit,
+											 pMana,pMaxHitPoints);
+			return kamikaze;			
 		}else{
 			units.escoltaXMLUnit();
-			PapaBicho scout = new PapaBicho(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+			setVar();
+			PapaBicho scout = new PapaBicho(pLevel,pPrice,pIntelligence,
+											pStrenght,pWeight,pResistance,
+											pMovespeed,pHitpoints,pWeightLimit,
+											pMana,pMaxHitPoints);
 			return scout;
 		}
+	}
+	
+	private void setVar(){
+		pLevel = list.Peek();
+		list.Dequeue();
+		pPrice = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pIntelligence = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pStrenght = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pWeight  = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pResistance = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pMovespeed = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pHitpoints = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pWeightLimit = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pMana = Integer.parseInt(list.Peek());
+		list.Dequeue();
+		pMaxHitPoints = Integer.parseInt(list.Peek());
 	}
 }

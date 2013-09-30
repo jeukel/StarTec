@@ -235,18 +235,6 @@ public class SimpleCircularList<K> implements ListInterface<K>, Iterable<K> {
     }
 
 	@Override
-	public K getHead() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public K getTail() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public boolean cut() {
 		// TODO Auto-generated method stub
 		return false;

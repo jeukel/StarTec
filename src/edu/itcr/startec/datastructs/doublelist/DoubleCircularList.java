@@ -98,7 +98,7 @@ public class DoubleCircularList<K> implements ListInterface<K>, Iterable<K> {
                 // Remove node
                 if(current == this.tail){
                 	this.tail = current.getPrevious();
-                	current.previous.setNext(current.getNext());
+                	current.getPrevious().setNext(current.getNext());
                 	this.length -= 1;
                 	return true;
                 }
@@ -108,8 +108,8 @@ public class DoubleCircularList<K> implements ListInterface<K>, Iterable<K> {
                 	this.length -= 1;
                 	return true;
                 }
-                current.previous.setNext(current.getNext());
-                current.getNext().setPrevious(current.previous);
+                current.getPrevious().setNext(current.getNext());
+                current.getNext().setPrevious(current.getPrevious());
                 current.setNext(null);
                 current = null;
                 this.length -= 1;
@@ -157,9 +157,9 @@ public class DoubleCircularList<K> implements ListInterface<K>, Iterable<K> {
             node.setPrevious(this.tail);
         } else {
             node.setNext(current);
-            node.setPrevious(current.previous);
-            if(current.previous != null) {
-                current.previous.setNext(node);
+            node.setPrevious(current.getPrevious());
+            if(current.getPrevious() != null) {
+                current.getPrevious().setNext(node);
                 current.setPrevious(node);
             }
         }
@@ -249,18 +249,6 @@ public class DoubleCircularList<K> implements ListInterface<K>, Iterable<K> {
         //Set new list
         this.head = node;
         return true;
-	}
-
-	@Override
-	public K getHead() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public K getTail() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
